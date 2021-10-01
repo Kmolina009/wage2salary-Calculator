@@ -19,7 +19,8 @@ function wage2Monthly(){
 }
 function wageSalaryConverter(wage) {
     //Take wage, convert it into a yearly income
-   return wage*2080
+   console.log(wage)
+    return wage*2080
 }
 //
 function conversionTable(min,max) {
@@ -28,8 +29,23 @@ function conversionTable(min,max) {
        let entry = wageSalaryConverter(i);
        wageTable.push(new IncomeEntry(i,entry))
    }
+   
    return wageTable
 }
 
-conversionTable(1, 8)
-console.log(conversionTable(18, 25))
+// DOM ELEMENTS
+const SALARY_FORM = document.querySelector("form[data-form=wage-2-yearly]")
+const SALARY_CONTAINER = document.querySelector("div[data-container = wage-2-yearly-output]")
+let wage2SalaryInput = SALARY_FORM.firstElementChild
+
+//Elements to be made - return value to be added to div
+function returnSalaryAmount(){
+    
+}
+document.querySelector("input[value=Submit]").addEventListener('click',()=>{
+    console.log("hello");
+    console.log(
+        wageSalaryConverter(wage2SalaryInput.value)
+    )
+    
+})
