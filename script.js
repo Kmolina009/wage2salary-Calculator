@@ -19,10 +19,9 @@ function wage2Monthly(){
 }
 function wageSalaryConverter(wage) {
     //Take wage, convert it into a yearly income
-   console.log(wage)
     return wage*2080
 }
-//
+
 function conversionTable(min,max) {
    let wageTable = [];
    for (let i = min; i <= max; i++) {
@@ -43,9 +42,7 @@ function returnSalaryAmount(){
     
 }
 document.querySelector("input[value=Submit]").addEventListener('click',()=>{
-    console.log("hello");
-    console.log(
-        wageSalaryConverter(wage2SalaryInput.value)
-    )
+    
+    SALARY_CONTAINER.innerText =`${wageSalaryConverter(wage2SalaryInput.value)}`
     
 })
