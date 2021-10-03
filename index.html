@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/reset.css" />
+    <title>Wage2Salary</title>
+  </head>
+  <body>
     <main>
-        <h1>Wage 2 Salary</h1>
-        <div>
-            <form data-form="wage-2-yearly">
-                <input type="text" name="wage-2-salary-input" id="">
-                <input type="button" value="Submit">
-            </form>
-            <!-- Output -->
-            <div data-container="wage-2-yearly-output">
-                <!-- Output goes here -->
+        <div class="wage2salary-container">
+        <h1>Wage2Salary</h1>
+        <div class="form-contents-container">
+            <div class="screw-container">
+                <div class="screw">
+                    <div class="screw-head"></div>
+                </div>
+                <div class="screw">
+                    <div class="screw-head"></div>
+                </div>
+            </div>
+            <div class="form-container">
+          <form data-form="wage-2-yearly">
+            <input type="text" name="wage-2-salary-input" id="" />
+            <input type="button" value="Submit" />
+          </form>
+          <!-- Output -->
+          <div data-container="wage-2-yearly-output">
+            <!-- Output goes here -->
+          </div>
+        </div>
+        <div class="screw-container">
+            <div class="screw">
+                <div class="screw-head"></div>
+            </div>
+            <div class="screw">
+                <div class="screw-head"></div>
             </div>
         </div>
+    </div>
+      </div>
     </main>
-    <script src="script.js"></script>
-</body>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/screw-rotations.js"></script>
+  </body>
 </html>
