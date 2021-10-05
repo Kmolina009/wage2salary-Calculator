@@ -40,6 +40,8 @@
 .wage2salary-container form input[type=text] {
   width: 733px;
   height: 68px;
+  font-size: 3rem;
+  font-family: "Mali", script;
 }
 .wage2salary-container form input[type=button] {
   height: 59px;
@@ -52,6 +54,11 @@
   height: 158px;
   width: 732px;
   background-color: #8f8f8f;
+  font-family: "Mali", script;
+  font-size: 3rem;
+  text-align: center;
+  line-height: 9rem;
+  font-weight: 700;
 }
 
 .screw-container {
