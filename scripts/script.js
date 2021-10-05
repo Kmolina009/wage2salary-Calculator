@@ -47,8 +47,8 @@ document.querySelector("input[value=Submit]").addEventListener('click',()=>{
 
 //Hitting the Eneter key while in the text input
 document.querySelector("input[name=wage-2-salary-input]").addEventListener('keypress',(e)=>{
-    e.preventDefault()
     if(e.key=="Enter"){
+        e.preventDefault()
         SALARY_CONTAINER.innerText =`${wageSalaryConverter(wage2SalaryInput.value)}`
     }
 })
