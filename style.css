@@ -3,11 +3,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #bdbdbd;
   height: 602px;
   width: 1081px;
   margin: 10% auto;
   border-radius: 1.5rem;
+  background-color: #CE9734;
 }
 .wage2salary-container h1 {
   font-family: "Mali", cursive;
@@ -45,6 +45,10 @@
   border-radius: 0.75rem;
   font-size: 3rem;
   font-family: "Mali", script;
+  background-color: #6AC930;
+}
+.wage2salary-container form input[type=text]::placeholder {
+  color: black;
 }
 .wage2salary-container form input[type=button] {
   height: 59px;
@@ -53,11 +57,12 @@
   font-family: "Mali", cursive;
   font-weight: 400;
   border-radius: 1.5rem;
+  background-color: #D051BC;
 }
 .wage2salary-container div[data-container=wage-2-yearly-output] {
   height: 158px;
   width: 732px;
-  background-color: #8f8f8f;
+  background-color: #8E3DAB;
   font-family: "Mali", script;
   font-size: 3rem;
   text-align: center;
@@ -81,7 +86,6 @@
   height: 12%;
   width: 65%;
   border-radius: 50%;
-  background-color: gray;
   border: 1px solid black;
   margin: 0 auto;
 }
@@ -100,7 +104,7 @@
 
 body {
   height: 100vh;
-  background-color: #34ce97;
+  background-color: #9734CE;
 }
 
 main {
