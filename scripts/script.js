@@ -17,10 +17,13 @@ function wage2Biweekly(){
 function wage2Monthly(){
 
 }
+// TODO - Fix bug located here
 function wageSalaryConverter(wage) {
+    let errMessage = "I'm sorry, but that isn't a number"
+    errMessage.style.fontSize = "1rem";
     //Input check
     if(isNaN(wage)){
-        return "I'm sorry, but that isn't a number"
+        return errMessage
     }
     //Take wage, convert it into a yearly income
     return wage*2080
@@ -34,14 +37,30 @@ function conversionTable(min,max) {
    }
    return wageTable
 }
-
+// Dollar Formatting
+const DOLLAR_FORMATTING = (number) => {
+    let dollarNumber ="" 
+    number = number.toString()
+    for(let i = number.length-1; i >=0; i--){
+      if(number.length > 3 
+          && i%3===0 
+          && !dollarNumber.indexOf(dollarNumber[0])){
+        dollarNumber += ","
+      }
+      dollarNumber += number[i]
+    }
+    //Favoring this method for redability
+    return ("$",dollarNumber.split("").reverse().join(""))
+  }
 // DOM ELEMENTS
 const SALARY_FORM = document.querySelector("form[data-form=wage-2-yearly]")
 const SALARY_CONTAINER = document.querySelector("div[data-container = wage-2-yearly-output]")
 let wage2SalaryInput = SALARY_FORM.firstElementChild
 
 //Clicking on Submit Button
-document.querySelector("input[value=Submit]").addEventListener('click',()=>{
+// Resolve bug involving the input
+document.querySelector("input[value='Submit!']").addEventListener('click',()=>{
+    // console.log("hello")
     SALARY_CONTAINER.innerText =`${wageSalaryConverter(wage2SalaryInput.value)}`
 })
 
