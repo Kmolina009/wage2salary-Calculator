@@ -45,34 +45,21 @@ function conversionTable(min,max) {
    }
    return wageTable
 }
-// Dollar Formatting
-const DOLLAR_FORMATTING = (number) => {
-    let dollarNumber ="" 
-    number = number.toString()
-    for(let i = number.length-1; i >=0; i--){
-      if(number.length > 3 
-          && i%3===0 
-          && !dollarNumber.indexOf(dollarNumber[0])){
-        dollarNumber += ","
-      }
-      dollarNumber += number[i]
-    }
-    //Favoring this method for redability
-    return ("$",dollarNumber.split("").reverse().join(""))
-  }
+//Formatting Input before passing into dollar format
 
-
+console.log(wage2SalaryInput.value)
 //Clicking on Submit Button
 // Resolve bug involving the input
 document.querySelector("input[value='Submit!']").addEventListener('click',()=>{
-    // console.log("hello")
-    SALARY_CONTAINER.innerText =`${wageSalaryConverter(wage2SalaryInput.value)}`
+    let w2SInput = Number(wage2SalaryInput.value).toFixed(2)
+    SALARY_CONTAINER.innerText =`${wageSalaryConverter(w2SInput)}`
 })
 
 //Hitting the Eneter key while in the text input
 document.querySelector("input[name=wage-2-salary-input]").addEventListener('keypress',(e)=>{
     if(e.key=="Enter"){
         e.preventDefault()
-        SALARY_CONTAINER.innerText =`${wageSalaryConverter(wage2SalaryInput.value)}`
+        let w2SInput = Number(wage2SalaryInput.value).toFixed(2)
+        SALARY_CONTAINER.innerText =`${wageSalaryConverter(w2SInput)}`
     }
 })
