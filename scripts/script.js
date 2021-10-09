@@ -12,7 +12,9 @@ class IncomeEntry{
         this.salary = salary;
     }
 };
-
+function floatToCentValue(output){
+    return output.toFixed(2)
+}
 //Conversion Functions
 function wage2Weekly(){
 
@@ -34,7 +36,7 @@ function wageSalaryConverter(wage) {
     }
     //Take wage, convert it into a yearly income
     SALARY_CONTAINER.style.fontSize = "5rem";
-    return wage*2080
+    return `$${floatToCentValue(wage*2080)}`
 }
 
 function conversionTable(min,max) {
@@ -51,15 +53,13 @@ console.log(wage2SalaryInput.value)
 //Clicking on Submit Button
 // Resolve bug involving the input
 document.querySelector("input[value='Submit!']").addEventListener('click',()=>{
-    let w2SInput = Number(wage2SalaryInput.value).toFixed(2)
-    SALARY_CONTAINER.innerText =`${wageSalaryConverter(w2SInput)}`
+    SALARY_CONTAINER.innerText =`${wageSalaryConverter(wage2SalaryInput.value)}`
 })
 
 //Hitting the Eneter key while in the text input
 document.querySelector("input[name=wage-2-salary-input]").addEventListener('keypress',(e)=>{
     if(e.key=="Enter"){
         e.preventDefault()
-        let w2SInput = Number(wage2SalaryInput.value).toFixed(2)
-        SALARY_CONTAINER.innerText =`${wageSalaryConverter(w2SInput)}`
+        SALARY_CONTAINER.innerText =`${wageSalaryConverter(wage2SalaryInput.value)}`
     }
 })
