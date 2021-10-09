@@ -12,7 +12,9 @@ class IncomeEntry{
         this.salary = salary;
     }
 };
-
+function floatToCentValue(output){
+    return output.toFixed(2)
+}
 //Conversion Functions
 function wage2Weekly(){
 
@@ -34,7 +36,7 @@ function wageSalaryConverter(wage) {
     }
     //Take wage, convert it into a yearly income
     SALARY_CONTAINER.style.fontSize = "5rem";
-    return wage*2080
+    return `$${floatToCentValue(wage*2080)}`
 }
 
 function conversionTable(min,max) {
@@ -45,27 +47,12 @@ function conversionTable(min,max) {
    }
    return wageTable
 }
-// Dollar Formatting
-const DOLLAR_FORMATTING = (number) => {
-    let dollarNumber ="" 
-    number = number.toString()
-    for(let i = number.length-1; i >=0; i--){
-      if(number.length > 3 
-          && i%3===0 
-          && !dollarNumber.indexOf(dollarNumber[0])){
-        dollarNumber += ","
-      }
-      dollarNumber += number[i]
-    }
-    //Favoring this method for redability
-    return ("$",dollarNumber.split("").reverse().join(""))
-  }
+//Formatting Input before passing into dollar format
 
-
+console.log(wage2SalaryInput.value)
 //Clicking on Submit Button
 // Resolve bug involving the input
 document.querySelector("input[value='Submit!']").addEventListener('click',()=>{
-    // console.log("hello")
     SALARY_CONTAINER.innerText =`${wageSalaryConverter(wage2SalaryInput.value)}`
 })
 
